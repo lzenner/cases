@@ -1,16 +1,9 @@
 // I'm starting with such a high number in the hopes that
 // most modders can use this unmodified
 @900000	= ~He         She~
-@900001 = ~HE         SHE~
-@900002 = ~Him        Her~
-@900003 = ~HIM        HER~
-@900004 = ~Boy        Girl~
-@900005 = ~BOY        GIRL~
-@900006 = ~Man        Woman~
-@900007 = ~MAN        WOMAN~
-@900008 = ~Lord       Lady~
-@900009 = ~LORD       LADY~
-@900010 = ~Sir        Ma'am~
-@900011 = ~SIR        MA'AM~
-@900012 = ~Master     Mistress~
-@900013 = ~MASTER     MISTRESS~
+@900001 = ~Him        Her~
+@900002 = ~Boy        Girl~
+@900003 = ~Man        Woman~
+@900004 = ~Lord       Lady~
+@900005 = ~Sir        Ma'am~
+@900006 = ~Master     Mistress~

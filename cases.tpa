@@ -58,7 +58,8 @@ COPY_EXISTING ~TOKENTXT.2DA~ ~override~
 		SET newRow += 1
 	END
 	PATCH_IF ($pronouns("HESHE") = 0 OR $pronouns("HESHE") = 1) THEN BEGIN
-		SPRINT strTra @900001
+		SPRINT strTra @900000
+		TO_UPPER strTra
 		// Add the missing pronoun to the token table
 		PATCH_IF (%newRow% > 99) THEN BEGIN
 			SPRINT EVAL addLine ~%newRow%        UPPER_HESHE            1           35         1          0          %strTra%~
@@ -71,7 +72,7 @@ COPY_EXISTING ~TOKENTXT.2DA~ ~override~
 		SET newRow += 1
 	END
 	PATCH_IF ($pronouns("HIMHER") = 0 OR $pronouns("HIMHER") = 2) THEN BEGIN
-		SPRINT strTra @900002
+		SPRINT strTra @900001
 		// Add the missing pronoun to the token table
 		PATCH_IF (%newRow% > 99) THEN BEGIN
 			SPRINT EVAL addLine ~%newRow%        PROPER_HIMHER          1           35         1          0          %strTra%~
@@ -84,7 +85,8 @@ COPY_EXISTING ~TOKENTXT.2DA~ ~override~
 		SET newRow += 1
 	END
 	PATCH_IF ($pronouns("HIMHER") = 0 OR $pronouns("HIMHER") = 1) THEN BEGIN
-		SPRINT strTra @900003
+		SPRINT strTra @900001
+		TO_UPPER strTra
 		// Add the missing pronoun to the token table
 		PATCH_IF (%newRow% > 99) THEN BEGIN
 			SPRINT EVAL addLine ~%newRow%        UPPER_HIMHER           1           35         1          0          %strTra%~
@@ -97,7 +99,7 @@ COPY_EXISTING ~TOKENTXT.2DA~ ~override~
 		SET newRow += 1
 	END
 	PATCH_IF ($pronouns("BOYGIRL") = 0 OR $pronouns("BOYGIRL") = 2) THEN BEGIN
-		SPRINT strTra @900004
+		SPRINT strTra @900002
 		// Add the missing pronoun to the token table
 		PATCH_IF (%newRow% > 99) THEN BEGIN
 			SPRINT EVAL addLine ~%newRow%        PROPER_BOYGIRL         1           35         1          0          %strTra%~
@@ -110,7 +112,8 @@ COPY_EXISTING ~TOKENTXT.2DA~ ~override~
 		SET newRow += 1
 	END
 	PATCH_IF ($pronouns("BOYGIRL") = 0 OR $pronouns("BOYGIRL") = 1) THEN BEGIN
-		SPRINT strTra @900005
+		SPRINT strTra @900002
+		TO_UPPER strTra
 		// Add the missing pronoun to the token table
 		PATCH_IF (%newRow% > 99) THEN BEGIN
 			SPRINT EVAL addLine ~%newRow%        UPPER_BOYGIRL          1           35         1          0          %strTra%~
@@ -123,7 +126,7 @@ COPY_EXISTING ~TOKENTXT.2DA~ ~override~
 		SET newRow += 1
 	END
 	PATCH_IF ($pronouns("MANWOMAN") = 0 OR $pronouns("MANWOMAN") = 2) THEN BEGIN
-		SPRINT strTra @900006
+		SPRINT strTra @900003
 		// Add the missing pronoun to the token table
 		PATCH_IF (%newRow% > 99) THEN BEGIN
 			SPRINT EVAL addLine ~%newRow%        PROPER_MANWOMAN        1           35         1          0          %strTra%~
@@ -136,7 +139,8 @@ COPY_EXISTING ~TOKENTXT.2DA~ ~override~
 		SET newRow += 1
 	END
 	PATCH_IF ($pronouns("MANWOMAN") = 0 OR $pronouns("MANWOMAN") = 1) THEN BEGIN
-		SPRINT strTra @900007
+		SPRINT strTra @900003
+		TO_UPPER strTra
 		// Add the missing pronoun to the token table
 		PATCH_IF (%newRow% > 99) THEN BEGIN
 			SPRINT EVAL addLine ~%newRow%        UPPER_MANWOMAN         1           35         1          0          %strTra%~
@@ -149,7 +153,7 @@ COPY_EXISTING ~TOKENTXT.2DA~ ~override~
 		SET newRow += 1
 	END
 	PATCH_IF ($pronouns("LORDLADY") = 0 OR $pronouns("LORDLADY") = 2) THEN BEGIN
-		SPRINT strTra @900008
+		SPRINT strTra @900004
 		// Add the missing pronoun to the token table
 		PATCH_IF (%newRow% > 99) THEN BEGIN
 			SPRINT EVAL addLine ~%newRow%        PROPER_LORDLADY        1           35         1          0          %strTra%~
@@ -162,7 +166,8 @@ COPY_EXISTING ~TOKENTXT.2DA~ ~override~
 		SET newRow += 1
 	END
 	PATCH_IF ($pronouns("LORDLADY") = 0 OR $pronouns("LORDLADY") = 1) THEN BEGIN
-		SPRINT strTra @900009
+		SPRINT strTra @900004
+		TO_UPPER strTra
 		// Add the missing pronoun to the token table
 		PATCH_IF (%newRow% > 99) THEN BEGIN
 			SPRINT EVAL addLine ~%newRow%        UPPER_LORDLADY         1           35         1          0          %strTra%~
@@ -175,7 +180,7 @@ COPY_EXISTING ~TOKENTXT.2DA~ ~override~
 		SET newRow += 1
 	END
 	PATCH_IF ($pronouns("SIRMAAM") = 0 OR $pronouns("SIRMAAM") = 2) THEN BEGIN
-		SPRINT strTra @900010
+		SPRINT strTra @900005
 		// Add the missing pronoun to the token table
 		PATCH_IF (%newRow% > 99) THEN BEGIN
 			SPRINT EVAL addLine ~%newRow%        PROPER_SIRMAAM         1           35         1          0          %strTra%~
@@ -188,7 +193,8 @@ COPY_EXISTING ~TOKENTXT.2DA~ ~override~
 		SET newRow += 1
 	END
 	PATCH_IF ($pronouns("SIRMAAM") = 0 OR $pronouns("SIRMAAM") = 1) THEN BEGIN
-		SPRINT strTra @900011
+		SPRINT strTra @900005
+		TO_UPPER strTra
 		// Add the missing pronoun to the token table
 		PATCH_IF (%newRow% > 99) THEN BEGIN
 			SPRINT EVAL addLine ~%newRow%        UPPER_SIRMAAM          1           35         1          0          %strTra%~
@@ -201,7 +207,7 @@ COPY_EXISTING ~TOKENTXT.2DA~ ~override~
 		SET newRow += 1
 	END
 	PATCH_IF ($pronouns("MASTERMISTRESS") = 0 OR $pronouns("MASTERMISTRESS") = 2) THEN BEGIN
-		SPRINT strTra @900012
+		SPRINT strTra @900006
 		// Add the missing pronoun to the token table
 		PATCH_IF (%newRow% > 99) THEN BEGIN
 			SPRINT EVAL addLine ~%newRow%        PROPER_MASTERMISTRESS  1           35         1          0          %strTra%~
@@ -214,7 +220,8 @@ COPY_EXISTING ~TOKENTXT.2DA~ ~override~
 		SET newRow += 1
 	END
 	PATCH_IF ($pronouns("MASTERMISTRESS") = 0 OR $pronouns("MASTERMISTRESS") = 1) THEN BEGIN
-		SPRINT strTra @900013
+		SPRINT strTra @900006
+		TO_UPPER strTra
 		// Add the missing pronoun to the token table
 		PATCH_IF (%newRow% > 99) THEN BEGIN
 			SPRINT EVAL addLine ~%newRow%        UPPER_MASTERMISTRESS   1           35         1          0          %strTra%~
