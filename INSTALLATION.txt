@@ -1,0 +1,42 @@
+The case.tra files need to be put where your other tra's are and has to be included in your array of translation files to be reloaded, and listed where you have the other tra's listed.  Like: 
+
+ALWAYS
+	ACTION_DEFINE_ARRAY transitions_noconvert BEGIN setup END
+	ACTION_DEFINE_ARRAY transitions_reload BEGIN game cases END       // <<<========
+
+   LAF HANDLE_CHARSETS
+      INT_VAR
+         infer_charset = 1
+      STR_VAR
+         tra_path = EVAL ~transitions/languages~
+         noconvert_array = transitions_noconvert
+         reload_array = transitions_reload
+    END
+END
+
+LANGUAGE ~American English~ ~american~   
+   ~transitions/languages/american/setup.tra~
+   ~transitions/languages/american/game.tra~
+   ~transitions/languages/american/cases.tra~                // <<<===================
+
+//  etc....
+
+The tpa file can be included anywhere in your tp2 file (or in another tpa) whenever you want to include a proper or uppcase player1 pronoun, like:
+
+/////////////////////////////////////
+// CLEAN-UP QUESTS                 //
+/////////////////////////////////////
+BEGIN @13       // MOD 20
+DESIGNATED 20
+SUBCOMPONENT @12
+INCLUDE ~transitions/components/cases.tpa~    // Add proper and upper case player1 pronouns so I can use it in my dialogue
+INCLUDE ~transitions/components/another_one_with_dialogue.tpa~
+
+Then, in your dialogue file:
+BEGIN WHATEVER
+  IF ~True()~ THEN BEGIN MY_DIALOGUE
+    SAY ~<PROPER_HESHE> is too strong for us!  Run for your lives!~
+    ...
+END
+
+You don't need to worry about incuding the cases.tpa file multiple times in your mod.  They entries will not duplicate.
