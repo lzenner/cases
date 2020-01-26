@@ -8,6 +8,7 @@ ACTION_DEFINE_ASSOCIATIVE_ARRAY pronouns BEGIN
 	MANWOMAN => 0
 	LORDLADY => 0
 	SIRMAAM => 0
+	MASTERMISTRESS => 0
 END
 
 COPY_EXISTING ~TOKENTXT.2DA~ ~override~
@@ -37,6 +38,8 @@ COPY_EXISTING ~TOKENTXT.2DA~ ~override~
 			~UPPER_LORDLADY~ BEGIN SET $pronouns("LORDLADY") += 2 END 
 			~PROPER_SIRMAAM~ BEGIN SET $pronouns("SIRMAAM") = 1 END 
 			~UPPER_SIRMAAM~ BEGIN SET $pronouns("SIRMAAM") += 2 END 
+			~PROPER_MASTERMISTRESS~ BEGIN SET $pronouns("MASTERMISTRESS") = 1 END 
+			~UPPER_MASTERMISTRESS~ BEGIN SET $pronouns("MASTERMISTRESS") += 2 END 
 			DEFAULT // do nothing
 		END
 	END
@@ -193,6 +196,32 @@ COPY_EXISTING ~TOKENTXT.2DA~ ~override~
 			SPRINT EVAL addLine ~%newRow%         UPPER_SIRMAAM          1           35         1          0          %strTra%~
 		END ELSE BEGIN
 			SPRINT EVAL addLine ~%newRow%          UPPER_SIRMAAM          1           35         1          0          %strTra%~
+		END
+		INSERT_2DA_ROW %newRow% 3 ~%addLine%~
+		SET newRow += 1
+	END
+	PATCH_IF ($pronouns("MASTERMISTRESS") = 0 OR $pronouns("MASTERMISTRESS") = 2) THEN BEGIN
+		SPRINT strTra @900012
+		// Add the missing pronoun to the token table
+		PATCH_IF (%newRow% > 99) THEN BEGIN
+			SPRINT EVAL addLine ~%newRow%        PROPER_MASTERMISTRESS  1           35         1          0          %strTra%~
+		END ELSE PATCH_IF (%newRow% > 9) THEN BEGIN
+			SPRINT EVAL addLine ~%newRow%         PROPER_MASTERMISTRESS  1           35         1          0          %strTra%~
+		END ELSE BEGIN
+			SPRINT EVAL addLine ~%newRow%          PROPER_MASTERMISTRESS  1           35         1          0          %strTra%~
+		END
+		INSERT_2DA_ROW %newRow% 3 ~%addLine%~
+		SET newRow += 1
+	END
+	PATCH_IF ($pronouns("MASTERMISTRESS") = 0 OR $pronouns("MASTERMISTRESS") = 1) THEN BEGIN
+		SPRINT strTra @900013
+		// Add the missing pronoun to the token table
+		PATCH_IF (%newRow% > 99) THEN BEGIN
+			SPRINT EVAL addLine ~%newRow%        UPPER_MASTERMISTRESS   1           35         1          0          %strTra%~
+		END ELSE PATCH_IF (%newRow% > 9) THEN BEGIN
+			SPRINT EVAL addLine ~%newRow%         UPPER_MASTERMISTRESS   1           35         1          0          %strTra%~
+		END ELSE BEGIN
+			SPRINT EVAL addLine ~%newRow%          UPPER_MASTERMISTRESS   1           35         1          0          %strTra%~
 		END
 		INSERT_2DA_ROW %newRow% 3 ~%addLine%~
 		SET newRow += 1
