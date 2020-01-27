@@ -43,4 +43,4 @@ BEGIN WHATEVER
     ...
 END
 
-You don't need to worry about incuding the cases.tpa file multiple times in your mod.  They entries will not duplicate.
+You don't need to worry about incuding the cases.tpa file multiple times in your mod.  The entries will not duplicate.
