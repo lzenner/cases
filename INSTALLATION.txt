@@ -1,4 +1,6 @@
-The case.tra files need to be put where your other tra's are and has to be included in your array of translation files to be reloaded, and listed where you have the other tra's listed.  Like: 
+The case.tra files need to be put where your other tra's are and has to be included in your 
+array of translation files to be reloaded, and listed where you have the other tra's listed.  
+Like: 
 
 ALWAYS
 	ACTION_DEFINE_ARRAY transitions_noconvert BEGIN setup END
@@ -21,7 +23,8 @@ LANGUAGE ~American English~ ~american~
 
 //  etc....
 
-The tpa file can be included anywhere in your tp2 file (or in another tpa) whenever you want to include a proper or uppcase player1 pronoun, like:
+The tpa file can be included anywhere in your tp2 file (or in another tpa) whenever you want to 
+include a proper or upper case player1 pronoun, like:
 
 /////////////////////////////////////
 // CLEAN-UP QUESTS                 //
@@ -29,7 +32,8 @@ The tpa file can be included anywhere in your tp2 file (or in another tpa) whene
 BEGIN @13       // MOD 20
 DESIGNATED 20
 SUBCOMPONENT @12
-INCLUDE ~transitions/components/cases.tpa~    // Add proper and upper case player1 pronouns so I can use it in my dialogue
+INCLUDE ~transitions/components/cases.tpa~    // Add proper and upper case player1 pronouns so I 
+                                              // can use it in my dialogue
 INCLUDE ~transitions/components/another_one_with_dialogue.tpa~
 
 Then, in your dialogue file:

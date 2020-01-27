@@ -1,1 +1,3 @@
-I don't know what would happen if the alignment of the 2nd column were to be thrown off by too many or not enough spaces between the two strings.  Maybe nothing.  Maybe it'll not be able to see the 'female' pronoun.  Maybe it'll see it just fine.  Try it and see! :)
+I don't know what would happen if the alignment of the 2nd column were to be thrown off by 
+too many or not enough spaces between the two strings.  Maybe nothing.  Maybe it'll not be 
+able to see the 'female' pronoun.  Maybe it'll see it just fine.  Try it and see! :)
