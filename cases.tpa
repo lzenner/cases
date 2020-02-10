@@ -1,4 +1,10 @@
-// Add proper and upper case character pronouns to the token table
+/////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                             //
+// Adds proper and upper case player 1 pronouns into tokentxt.2da for EE Infinity Engine games //
+// by Lauriel                                                                                  //
+// with the help of @Grammarsalad, @subtledoctor, @grodrigues, @Mike1072, and @jastey          //
+//                                                                                             //
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Set up array of pronouns to be entered into the token table
 ACTION_DEFINE_ASSOCIATIVE_ARRAY pronouns BEGIN 
