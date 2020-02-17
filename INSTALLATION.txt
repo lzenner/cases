@@ -1,5 +1,6 @@
 The case.tra files need to be put where your other tra's are and has to be included in your 
 array of translation files to be reloaded, and listed where you have the other tra's listed.  
+Treat it just like your GAME.TRA, assuming you use one.
 Like: 
 
 ALWAYS
@@ -24,7 +25,10 @@ LANGUAGE ~American English~ ~american~
 //  etc....
 
 The tpa file can be included anywhere in your tp2 file (or in another tpa) whenever you want to 
-include a proper or upper case player1 pronoun, like:
+include a proper or upper case player1 pronoun.  Then just call the function.  It only needs to
+be run once but can be run multiple times.  The entries will not duplicate.  A good place to put
+it is in a section of your ALWAYS block that is set up to only run once - gotta love oxymorons!  
+But you can put it anywhere.
 
 /////////////////////////////////////
 // CLEAN-UP QUESTS                 //
@@ -33,7 +37,8 @@ BEGIN @13       // MOD 20
 DESIGNATED 20
 SUBCOMPONENT @12
 INCLUDE ~transitions/components/cases.tpa~    // Add proper and upper case player1 pronouns so I 
-                                              // can use it in my dialogue
+LAF INSTALL_PROPER_CASES END                  // can use it in my dialogue
+
 INCLUDE ~transitions/components/another_one_with_dialogue.tpa~
 
 Then, in your dialogue file:
@@ -42,5 +47,3 @@ BEGIN WHATEVER
     SAY ~<PROPER_HESHE> is too strong for us!  Run for your lives!~
     ...
 END
-
-You don't need to worry about incuding the cases.tpa file multiple times in your mod.  The entries will not duplicate.
