@@ -7,3 +7,5 @@ Thank you @Grammarsalad, @subtledoctor, @grodrigues, @Mike1072, and @jastey for 
 
 Big thanks to gibberlings3.net for all the help and support!
 
+Thank you JohnBob for the French translation
+
